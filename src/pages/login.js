@@ -27,7 +27,8 @@ const Login = () => {
             <button
               onClick={() =>
                 signIn("google", {
-                  callbackUrl: process.env.NEXT_PUBLIC_NEXT_APP_URL,
+                  callbackUrl: "http://localhost:3000/",
+                  //   callbackUrl: process.env.NEXT_PUBLIC_NEXT_APP_URL,
                 })
               }
               className="flex w-full justify-center items-center rounded-md bg-red-500 p-3 my-2 text-sm  leading-6 text-white shadow-sm hover:bg-red-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 font-bold"
@@ -39,7 +40,8 @@ const Login = () => {
             <button
               onClick={() =>
                 signIn("github", {
-                  callbackUrl: process.env.NEXT_PUBLIC_NEXT_APP_URL,
+                  callbackUrl: "http://localhost:3000/",
+                  //   callbackUrl: process.env.NEXT_PUBLIC_NEXT_APP_URL,
                 })
               }
               className="flex w-full justify-center items-center rounded-md bg-black p-3 my-2 text-sm  leading-6 text-white shadow-sm hover:bg-gray-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 font-bold"
