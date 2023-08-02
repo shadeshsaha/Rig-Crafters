@@ -15,10 +15,10 @@ const HeroSection = () => {
       imageURL:
         "https://www.startech.com.bd/image/cache/catalog/home/banner/express-delivery-home-banner-june-982x500.webp",
     },
-    {
-      imageURL:
-        "https://www.startech.com.bd/image/cache/catalog/home/banner/desktop-deal/desktop-deal-live-now-home-banner-982x500.webp",
-    },
+    // {
+    //   imageURL:
+    //     "https://www.startech.com.bd/image/cache/catalog/home/banner/desktop-deal/desktop-deal-live-now-home-banner-982x500.webp",
+    // },
   ];
 
   const today = new Date();
