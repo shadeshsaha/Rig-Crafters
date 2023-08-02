@@ -127,7 +127,8 @@ export async function getServerSideProps(context) {
 
   try {
     const res = await fetch(
-      `${process.env.NEXT_PUBLIC_NEXT_APP_URL}/api/products?category=${
+      // `${process.env.NEXT_PUBLIC_NEXT_APP_URL}/api/products?category=${
+      `http://localhost:3000/api/products?category=${
         category ? category : "CPU%2FProcessor"
       }`
     );

@@ -4,7 +4,6 @@ import Review from "@/components/Review";
 import Specification from "@/components/Specification";
 import Head from "next/head";
 import Image from "next/image";
-import React from "react";
 import { AiFillStar, AiOutlineStar } from "react-icons/ai";
 
 const ProductDetails = ({ product }) => {
@@ -139,7 +138,8 @@ export default ProductDetails;
 export async function getStaticPaths() {
   try {
     const res = await fetch(
-      `${process.env.NEXT_PUBLIC_NEXT_APP_URL}/api/products`
+      `http://localhost:3000/api/products`
+      // `${process.env.NEXT_PUBLIC_NEXT_APP_URL}/api/products`
     );
     const productsRes = await res.json();
 
@@ -165,9 +165,8 @@ export async function getStaticProps({ params }) {
 
   try {
     const res = await fetch(
-      `${
-        process.env.NEXT_PUBLIC_NEXT_APP_URL
-      }/api/products/${productId.toString()}`
+      `http://localhost:3000/api/products/${productId.toString()}`
+      // `${process.env.NEXT_PUBLIC_NEXT_APP_URL}/api/products/${productId.toString()}`
     );
 
     if (!res.ok) {
