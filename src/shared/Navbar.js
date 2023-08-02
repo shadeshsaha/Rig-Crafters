@@ -14,8 +14,9 @@ import { GrClose } from "react-icons/gr";
 import { ImPower } from "react-icons/im";
 import { LuHardDrive } from "react-icons/lu";
 
-const Navbar = ({ openMenu, setOpenMenu }) => {
+const Navbar = () => {
   const [openCategory, setOpenCategory] = useState(false);
+  const [openMenu, setOpenMenu] = useState(false);
 
   // const { data: session } = useSession();
 
@@ -94,7 +95,6 @@ const Navbar = ({ openMenu, setOpenMenu }) => {
                 placeholder="Search..."
               />
             </div>
-
             {/* {session?.user.email ? ( */}
             <button
               onClick={() => signOut()}
