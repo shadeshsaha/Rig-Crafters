@@ -1,4 +1,4 @@
-import { signOut } from "next-auth/react";
+import { signOut, useSession } from "next-auth/react";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
@@ -18,7 +18,7 @@ const Navbar = () => {
   const [openCategory, setOpenCategory] = useState(false);
   const [openMenu, setOpenMenu] = useState(false);
 
-  // const { data: session } = useSession();
+  const { data: session } = useSession();
 
   const categories = [
     {
@@ -95,21 +95,22 @@ const Navbar = () => {
                 placeholder="Search..."
               />
             </div>
-            {/* {session?.user.email ? ( */}
-            <button
-              onClick={() => signOut()}
-              className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-            >
-              Log Out <span aria-hidden="true">&rarr;</span>
-            </button>
-            {/* ) : ( */}
-            <Link
-              href="/login"
-              className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-            >
-              Log in <span aria-hidden="true">&rarr;</span>
-            </Link>
-            {/* )} */}
+
+            {session?.user.email ? (
+              <button
+                onClick={() => signOut()}
+                className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+              >
+                Log Out <span aria-hidden="true">&rarr;</span>
+              </button>
+            ) : (
+              <Link
+                href="/login"
+                className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+              >
+                Log in <span aria-hidden="true">&rarr;</span>
+              </Link>
+            )}
           </div>
         </div>
 
@@ -328,21 +329,21 @@ const Navbar = () => {
                 </div>
 
                 <div className="py-6 flex justify-center items-center">
-                  {/* {session?.user.email ? ( */}
-                  <button
-                    onClick={() => signOut()}
-                    className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                  >
-                    Log Out <span aria-hidden="true">&rarr;</span>
-                  </button>
-                  {/* ) : ( */}
-                  <Link
-                    href="/login"
-                    className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                  >
-                    Log in <span aria-hidden="true">&rarr;</span>
-                  </Link>
-                  {/* )} */}
+                  {session?.user.email ? (
+                    <button
+                      onClick={() => signOut()}
+                      className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                    >
+                      Log Out <span aria-hidden="true">&rarr;</span>
+                    </button>
+                  ) : (
+                    <Link
+                      href="/login"
+                      className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                    >
+                      Log in <span aria-hidden="true">&rarr;</span>
+                    </Link>
+                  )}
                 </div>
               </div>
             </div>
