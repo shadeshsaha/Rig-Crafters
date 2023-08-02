@@ -5,13 +5,7 @@ import Head from "next/head";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export default function Home({}) {
-  const today = new Date().toLocaleString("en-US", {
-    weekday: "long",
-    month: "long",
-    day: "numeric",
-  });
-
+export default function Home({ productsRes }) {
   return (
     <>
       <Head>
@@ -19,8 +13,30 @@ export default function Home({}) {
       </Head>
       <main className={`${inter.className}`}>
         <HeroSection />
-        <FeaturedProducts />
+        <FeaturedProducts products={productsRes?.data} />
       </main>
     </>
   );
+}
+
+export async function getStaticProps() {
+  try {
+    // const res = await fetch(`${process.env.NEXT_PUBLIC_NEXT_APP_URL}/api/home`);
+    const res = await fetch(`http://localhost:3000/api/home`);
+    if (!res.ok) {
+      throw new Error("Fetch failed");
+    }
+    const productsRes = await res.json();
+
+    return {
+      props: {
+        productsRes,
+      },
+    };
+  } catch (error) {
+    console.error("Error fetching data:", error);
+    return {
+      notFound: true,
+    };
+  }
 }
