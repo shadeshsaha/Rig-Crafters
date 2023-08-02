@@ -14,9 +14,8 @@ import { GrClose } from "react-icons/gr";
 import { ImPower } from "react-icons/im";
 import { LuHardDrive } from "react-icons/lu";
 
-const Navbar = () => {
+const Navbar = ({ openMenu, setOpenMenu }) => {
   const [openCategory, setOpenCategory] = useState(false);
-  const [openMenu, setOpenMenu] = useState(false);
 
   // const { data: session } = useSession();
 
