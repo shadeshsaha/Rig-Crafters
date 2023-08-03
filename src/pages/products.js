@@ -97,12 +97,12 @@ const Products = ({ productsRes }) => {
             })}
           </div>
 
-          <div className="mt-10 px-2">
+          {/* <div className="mt-10 px-2">
             <div className="flex justify-between items-center bg-black p-2 text-white font-semibold rounded-md px-4">
               <p>Categorise of {"searchQuery"}</p>
               <p>Showing 1 to 20 of 20 (1Page)</p>
             </div>
-          </div>
+          </div> */}
 
           <div className="bg-white">
             <div className="px-2 ">

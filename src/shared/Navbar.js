@@ -68,7 +68,7 @@ const Navbar = () => {
   return (
     <header
       className="relative shadow-md z-50"
-      // style={{ backgroundColor: "#081621" }}
+      style={{ backgroundColor: "#081621" }}
     >
       <nav className="mx-auto max-w-7xl">
         <div
@@ -78,7 +78,13 @@ const Navbar = () => {
           <div className="flex lg:flex-1">
             <Link href="/" className="-m-1.5 p-1.5">
               <div className={""}>
-                <Image src="/logo.jpg" alt="Logo" height={30} width={150} />
+                <Image
+                  src="/Capture.jpg"
+                  alt="Logo"
+                  height={30}
+                  width={150}
+                  style={{ borderRadius: 10 }}
+                />
               </div>
             </Link>
           </div>
@@ -101,7 +107,7 @@ const Navbar = () => {
 
             <div>
               <Link href={"/pc_builder"}>
-                <button className="hidden lg:block px-6 py-2 bg-black rounded-md text-white font-bold">
+                <button className="hidden lg:block px-6 py-2 bg-white text-black rounded-md font-bold">
                   PC Builder
                 </button>
               </Link>
@@ -127,11 +133,11 @@ const Navbar = () => {
           </div>
         </div>
 
-        <div className="mx-auto flex max-w-7xl items-center justify-between pb-3 ">
+        <div className="mx-auto flex max-w-7xl items-center justify-between pb-3 mt-5">
           <div className="hidden lg:flex mx-2 lg:gap-x-12">
             <Link
               href="/"
-              className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+              className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-white hover:bg-gray-50"
             >
               Home
             </Link>
@@ -142,7 +148,7 @@ const Navbar = () => {
             >
               <button
                 type="button"
-                className="-mx-3 rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50 flex justify-center items-center"
+                className="-mx-3 rounded-lg px-3 py-2 text-base font-semibold leading-7 text-white hover:bg-gray-50 flex justify-center items-center"
               >
                 Categories
                 <svg
@@ -196,19 +202,19 @@ const Navbar = () => {
 
             <Link
               href="/products"
-              className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+              className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-white hover:bg-gray-50"
             >
               Products
             </Link>
             <Link
               href="/"
-              className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+              className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-white hover:bg-gray-50"
             >
               Marketplace
             </Link>
             <Link
               href="/"
-              className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+              className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-white hover:bg-gray-50"
             >
               Company
             </Link>

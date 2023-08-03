@@ -125,7 +125,10 @@ const FeaturedProducts = ({ products }) => {
 
           <div className="flex justify-center items-center my-10">
             <Link href={"/products"}>
-              <button className="px-6 py-3 bg-gray-600 hover:bg-black duration-300 rounded-md text-white font-bold">
+              <button
+                className="px-6 py-3 bg-gray-600 hover:bg-black duration-300 rounded-md text-white font-bold"
+                style={{ backgroundColor: "#081621" }}
+              >
                 See More
               </button>
             </Link>
