@@ -2,7 +2,7 @@ import { signOut, useSession } from "next-auth/react";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-import { AiOutlineBars, AiOutlineSearch } from "react-icons/ai";
+import { AiOutlineBars } from "react-icons/ai";
 import {
   BsBuildingAdd,
   BsFillCpuFill,
@@ -66,8 +66,11 @@ const Navbar = () => {
   ];
 
   return (
-    <header className="bg-white relative shadow-md z-50">
-      <nav className="mx-auto  max-w-7xl">
+    <header
+      className="relative shadow-md z-50"
+      // style={{ backgroundColor: "#081621" }}
+    >
+      <nav className="mx-auto max-w-7xl">
         <div
           className=" hidden lg:flex mx-2 items-center justify-between pt-4"
           aria-label="Global"
@@ -81,7 +84,7 @@ const Navbar = () => {
           </div>
 
           <div className="hidden lg:flex justify-end items-center">
-            <div className="relative mr-6 rounded-md shadow-sm">
+            {/* <div className="relative mr-6 rounded-md shadow-sm">
               <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3 ">
                 <span className="text-gray-500 sm:text-sm">
                   <AiOutlineSearch />
@@ -94,19 +97,29 @@ const Navbar = () => {
                 className="block w-full rounded-md border-0 py-1.5 pl-7 pr-20 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                 placeholder="Search..."
               />
+            </div> */}
+
+            <div>
+              <Link href={"/pc_builder"}>
+                <button className="hidden lg:block px-6 py-2 bg-black rounded-md text-white font-bold">
+                  PC Builder
+                </button>
+              </Link>
             </div>
 
             {session?.user.email ? (
               <button
                 onClick={() => signOut()}
-                className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                className="-mx-3 block rounded-lg px-3 py-1.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50 ml-2"
+                style={{ backgroundColor: "#ef4a23" }}
               >
                 Log Out <span aria-hidden="true">&rarr;</span>
               </button>
             ) : (
               <Link
                 href="/login"
-                className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                className="-mx-3 block rounded-lg px-3 py-1.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50 ml-2"
+                style={{ backgroundColor: "#115081", color: "white" }}
               >
                 Log in <span aria-hidden="true">&rarr;</span>
               </Link>
@@ -198,14 +211,6 @@ const Navbar = () => {
               className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
             >
               Company
-            </Link>
-          </div>
-
-          <div>
-            <Link href={"/pc_builder"}>
-              <button className="hidden lg:block px-6 py-3 bg-black rounded-md text-white font-bold">
-                PC Builder
-              </button>
             </Link>
           </div>
         </div>
@@ -332,14 +337,16 @@ const Navbar = () => {
                   {session?.user.email ? (
                     <button
                       onClick={() => signOut()}
-                      className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                      className="-mx-3 block rounded-lg px-3 py-1.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50 ml-2"
+                      style={{ backgroundColor: "#ef4a23" }}
                     >
                       Log Out <span aria-hidden="true">&rarr;</span>
                     </button>
                   ) : (
                     <Link
                       href="/login"
-                      className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                      className="-mx-3 block rounded-lg px-3 py-1.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50 ml-2"
+                      style={{ backgroundColor: "#115081", color: "white" }}
                     >
                       Log in <span aria-hidden="true">&rarr;</span>
                     </Link>
