@@ -15,7 +15,7 @@ const Login = () => {
           <div className="sm:mx-auto  sm:w-full sm:max-w-sm flex flex-col justify-start items-center ">
             <Link href="/">
               <div className={""}>
-                <Image src="/logo.jpg" alt="Logo" height={30} width={150} />
+                <Image src="/Capture.jpg" alt="Logo" height={40} width={180} />
               </div>
             </Link>
             <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">
@@ -27,8 +27,8 @@ const Login = () => {
             <button
               onClick={() =>
                 signIn("google", {
-                  callbackUrl: "http://localhost:3000/",
-                  //   callbackUrl: process.env.NEXT_PUBLIC_NEXT_APP_URL,
+                  // callbackUrl: "http://localhost:3000",
+                  callbackUrl: process.env.NEXT_PUBLIC_NEXT_APP_URL,
                 })
               }
               className="flex w-full justify-center items-center rounded-md bg-red-500 p-3 my-2 text-sm  leading-6 text-white shadow-sm hover:bg-red-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 font-bold"
@@ -40,8 +40,8 @@ const Login = () => {
             <button
               onClick={() =>
                 signIn("github", {
-                  callbackUrl: "http://localhost:3000/",
-                  //   callbackUrl: process.env.NEXT_PUBLIC_NEXT_APP_URL,
+                  // callbackUrl: "http://localhost:3000",
+                  callbackUrl: process.env.NEXT_PUBLIC_NEXT_APP_URL,
                 })
               }
               className="flex w-full justify-center items-center rounded-md bg-black p-3 my-2 text-sm  leading-6 text-white shadow-sm hover:bg-gray-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 font-bold"
@@ -53,7 +53,8 @@ const Login = () => {
             <p className="mt-10 text-center text-sm text-gray-500">
               <Link
                 href="/"
-                className="font-semibold leading-6 text-indigo-600 hover:text-indigo-500"
+                className="font-semibold leading-6"
+                style={{ color: "#081621" }}
               >
                 Build Your Beast PC
               </Link>

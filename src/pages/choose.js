@@ -91,8 +91,8 @@ export async function getServerSideProps(context) {
 
   try {
     const res = await fetch(
-      `http://localhost:3000/api/products?category=${category}`
-      // `${process.env.NEXT_PUBLIC_NEXT_APP_URL}/api/products?category=${category}`
+      // `http://localhost:3000/api/products?category=${category}`
+      `${process.env.NEXT_PUBLIC_NEXT_APP_URL}/api/products?category=${category}`
     );
     if (!res.ok) {
       throw new Error("Fetch failed");

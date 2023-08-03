@@ -138,8 +138,8 @@ export default ProductDetails;
 export async function getStaticPaths() {
   try {
     const res = await fetch(
-      `http://localhost:3000/api/products`
-      // `${process.env.NEXT_PUBLIC_NEXT_APP_URL}/api/products`
+      // `http://localhost:3000/api/products`
+      `${process.env.NEXT_PUBLIC_NEXT_APP_URL}/api/products`
     );
     const productsRes = await res.json();
 
@@ -163,10 +163,21 @@ export async function getStaticPaths() {
 export async function getStaticProps({ params }) {
   const { productId } = params;
 
+  if (typeof window === "undefined") {
+    return {
+      props: {
+        product: [],
+      },
+      revalidate: 60,
+    };
+  }
+
   try {
     const res = await fetch(
-      `http://localhost:3000/api/products/${productId.toString()}`
-      // `${process.env.NEXT_PUBLIC_NEXT_APP_URL}/api/products/${productId.toString()}`
+      // `http://localhost:3000/api/products/${productId.toString()}`
+      `${
+        process.env.NEXT_PUBLIC_NEXT_APP_URL
+      }/api/products/${productId.toString()}`
     );
 
     if (!res.ok) {

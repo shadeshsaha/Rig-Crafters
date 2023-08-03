@@ -1,16 +1,14 @@
-import React from "react";
-import { BsFillCpuFill, BsFillMotherboardFill } from "react-icons/bs";
-import { CgSmartphoneRam } from "react-icons/cg";
-import { ImPower } from "react-icons/im";
-import { FiMonitor } from "react-icons/fi";
-import { LuHardDrive } from "react-icons/lu";
-import { useDispatch, useSelector } from "react-redux";
 import CategoryComponent from "@/components/CategoryComponent";
-import BuildComponent from "@/components/BuildComponent";
 import PcBuildHeader from "@/components/PcBuildHeader";
-import swal from "sweetalert";
 import { removeALlBuildComponents } from "@/redux/features/pc_build/pcBuildSlice";
 import Head from "next/head";
+import { BsFillCpuFill, BsFillMotherboardFill } from "react-icons/bs";
+import { CgSmartphoneRam } from "react-icons/cg";
+import { FiMonitor } from "react-icons/fi";
+import { ImPower } from "react-icons/im";
+import { LuHardDrive } from "react-icons/lu";
+import { useDispatch, useSelector } from "react-redux";
+import swal from "sweetalert";
 
 const PcBuilder = () => {
   const { components } = useSelector((state) => state.pcBuild);
@@ -55,7 +53,7 @@ const PcBuilder = () => {
     },
   ];
 
-  const pcBuildHandelar = () => {
+  const pcBuildHandler = () => {
     dispatch(removeALlBuildComponents());
 
     swal("Success", "Your PC Build Order Created Successfully!", "success");
@@ -72,7 +70,7 @@ const PcBuilder = () => {
           <PcBuildHeader />
           <div>
             <div
-              className={` z-10 overflow-hidden  bg-white m-4 shadow-lg ring-1 ring-gray-900/5`}
+              className={`z-10 overflow-hidden  bg-white m-4 shadow-lg ring-1 ring-gray-900/5`}
             >
               <div className="p-4">
                 {categories?.map((category) => {
@@ -80,19 +78,19 @@ const PcBuilder = () => {
 
                   return <CategoryComponent key={id} category={category} />;
 
-                  const addedComponent = components.find(
-                    (product) => product.category === name
-                  );
+                  // const addedComponent = components.find(
+                  //   (product) => product.category === name
+                  // );
 
-                  return addedComponent ? (
-                    <BuildComponent
-                      key={id}
-                      product={addedComponent}
-                      link={link}
-                    />
-                  ) : (
-                    <CategoryComponent key={id} category={category} />
-                  );
+                  // return addedComponent ? (
+                  //   <BuildComponent
+                  //     key={id}
+                  //     product={addedComponent}
+                  //     link={link}
+                  //   />
+                  // ) : (
+                  //   <CategoryComponent key={id} category={category} />
+                  // );
                 })}
               </div>
             </div>
@@ -100,7 +98,7 @@ const PcBuilder = () => {
 
           <div className="my-10 text-center">
             <button
-              onClick={pcBuildHandelar}
+              onClick={pcBuildHandler}
               disabled={components?.length !== 6}
               className={` ${
                 components.length === 6 ? "bg-black" : "bg-black/40"

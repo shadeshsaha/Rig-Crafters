@@ -1,4 +1,3 @@
-import React from "react";
 import { useSelector } from "react-redux";
 
 const PcBuildHeader = () => {
@@ -13,7 +12,7 @@ const PcBuildHeader = () => {
   return (
     <div className="flex justify-between bg-white p-3 border-b">
       <h2 className="p-3 text-xl font-semibold text-center  ">
-        PC Builder - Build Your Own Computer - Star Tech
+        Rig Crafters - Build Your Own Computer
       </h2>
 
       <div>

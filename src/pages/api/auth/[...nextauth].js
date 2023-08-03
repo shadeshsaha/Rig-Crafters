@@ -14,6 +14,7 @@ export const authOptions = {
     }),
   ],
   pages: {
+    // signIn: "http://localhost:3000/login",
     signIn: "/login",
   },
 };
