@@ -163,14 +163,14 @@ export async function getStaticPaths() {
 export async function getStaticProps({ params }) {
   const { productId } = params;
 
-  if (typeof window === "undefined") {
-    return {
-      props: {
-        product: [],
-      },
-      revalidate: 60,
-    };
-  }
+  // if (typeof window === "undefined") {
+  //   return {
+  //     props: {
+  //       product: [],
+  //     },
+  //     revalidate: 60,
+  //   };
+  // }
 
   try {
     const res = await fetch(

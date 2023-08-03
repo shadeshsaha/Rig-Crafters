@@ -15,8 +15,11 @@ export const authOptions = {
   ],
   pages: {
     // signIn: "http://localhost:3000/login",
-    signIn: "/login",
+    // signIn: "/login",
+
+    signIn: `${process.env.NEXT_PUBLIC_NEXT_APP_URL}/login`,
   },
+  // secret: process.env.NEXTAUTH_SECRET,
 };
 
 // console.log(process.env.NEXT_PUBLIC_NEXT_APP_GITHUB_SECRET);

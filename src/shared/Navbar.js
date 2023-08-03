@@ -79,7 +79,7 @@ const Navbar = () => {
             <Link href="/" className="-m-1.5 p-1.5">
               <div className={""}>
                 <Image
-                  src="/Capture.jpg"
+                  src="/logo.jpg"
                   alt="Logo"
                   height={30}
                   width={150}
@@ -106,7 +106,7 @@ const Navbar = () => {
             </div> */}
 
             <div>
-              <Link href={"/pc_builder"}>
+              <Link href={"/pc_builder"} onClick={() => setOpenMenu(false)}>
                 <button className="hidden lg:block px-6 py-2 bg-white text-black rounded-md font-bold">
                   PC Builder
                 </button>

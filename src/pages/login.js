@@ -15,7 +15,7 @@ const Login = () => {
           <div className="sm:mx-auto  sm:w-full sm:max-w-sm flex flex-col justify-start items-center ">
             <Link href="/">
               <div className={""}>
-                <Image src="/Capture.jpg" alt="Logo" height={40} width={180} />
+                <Image src="/logo.jpg" alt="Logo" height={40} width={180} />
               </div>
             </Link>
             <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">
