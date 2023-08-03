@@ -96,11 +96,11 @@ const ProductDetails = ({ product }) => {
                 </div>
               </div>
 
-              <div className="lg:my-10  my-5">
+              {/* <div className="lg:my-10  my-5">
                 <button className="py-3 px-10 rounded-md bg-black text-white">
                   Buy Now
                 </button>
-              </div>
+              </div> */}
             </div>
           </div>
         </section>
