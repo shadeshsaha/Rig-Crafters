@@ -137,7 +137,7 @@ const Navbar = () => {
           <div className="hidden lg:flex mx-2 lg:gap-x-12">
             <Link
               href="/"
-              className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-white hover:bg-gray-50"
+              className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-white hover:bg-gray-50 hover:text-black"
             >
               Home
             </Link>
@@ -148,7 +148,7 @@ const Navbar = () => {
             >
               <button
                 type="button"
-                className="-mx-3 rounded-lg px-3 py-2 text-base font-semibold leading-7 text-white hover:bg-gray-50 flex justify-center items-center"
+                className="-mx-3 rounded-lg px-3 py-2 text-base font-semibold leading-7 text-white hover:bg-gray-50 hover:text-black flex justify-center items-center"
               >
                 Categories
                 <svg
@@ -189,9 +189,9 @@ const Navbar = () => {
                             {name}
                             <span className="absolute inset-0"></span>
                           </Link>
-                          <p className="mt-1 text-gray-600">
+                          {/* <p className="mt-1 text-gray-600">
                             Get a better understanding of your traffic
-                          </p>
+                          </p> */}
                         </div>
                       </div>
                     );
@@ -202,19 +202,19 @@ const Navbar = () => {
 
             <Link
               href="/products"
-              className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-white hover:bg-gray-50"
+              className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-white hover:bg-gray-50 hover:text-black"
             >
               Products
             </Link>
             <Link
               href="/"
-              className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-white hover:bg-gray-50"
+              className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-white hover:bg-gray-50 hover:text-black"
             >
               Marketplace
             </Link>
             <Link
               href="/"
-              className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-white hover:bg-gray-50"
+              className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-white hover:bg-gray-50 hover:text-black"
             >
               Company
             </Link>

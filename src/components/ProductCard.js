@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
 import { AiFillStar, AiOutlineStar } from "react-icons/ai";
 
 const ProductCard = ({ product }) => {
@@ -10,8 +9,19 @@ const ProductCard = ({ product }) => {
 
   return (
     <div className="relative">
-      <div className="group relative border px-3 lg:h-[400px]">
-        <div className="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md  lg:aspect-none group-hover:opacity-75 p-6 ">
+      <div
+        className="group relative border px-3 lg:h-[400px]"
+        style={{
+          borderRadius: 10,
+          textAlign: "center",
+          borderBottom: "3px solid rgba(55,73,187,.03)",
+          flex: "0 0 220px",
+          padding: "20px",
+          margin: 0,
+          backgroundColor: "white",
+        }}
+      >
+        <div className="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md lg:aspect-none group-hover:opacity-75 p-6 ">
           <Image
             src={images}
             alt={name}
@@ -24,7 +34,17 @@ const ProductCard = ({ product }) => {
           <h3 className=" text-gray-500 hover:text-black duration-300">
             <Link href={`/products/${id}`}>
               <span aria-hidden="true" className="absolute inset-0"></span>
-              {name}
+              <p
+                style={{
+                  lineHeight: "22px",
+                  fontWeight: 400,
+                  fontSize: "15px",
+                  color: "#111",
+                  fontFamily: "Trebuchet MS, sans-serif",
+                }}
+              >
+                {name}
+              </p>
             </Link>
           </h3>
 
@@ -43,7 +63,18 @@ const ProductCard = ({ product }) => {
         </div>
         <div className="absolute left-0 bottom-3 w-full ">
           <div className="hidden lg:flex justify-between w-full items-center px-3">
-            <p className="text-xl font-bold text-[#EE4B23]">{Price}</p>
+            <p
+              className="text-xl font-bold text-[#EE4B23]"
+              style={{
+                lineHeight: "22px",
+                fontSize: "17px",
+                fontWeight: 600,
+                color: "#ef4a23",
+                fontFamily: "Trebuchet MS, sans-serif",
+              }}
+            >
+              {Price}
+            </p>
             <div className="text-yellow-400 flex items-center">
               {[...Array(roundedRating)].map((_, index) => (
                 <AiFillStar key={index} />
